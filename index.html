@@ -103,8 +103,12 @@ body{
 }
 
 @keyframes bookFloat{
-    0%,100%{transform:perspective(800px) rotateY(-10deg) translateY(0)}
-    50%{transform:perspective(800px) rotateY(-6deg) translateY(-8px)}
+    0%,100%{
+        transform:perspective(800px) rotateY(-10deg) translateY(0)
+    }
+    50%{
+        transform:perspective(800px) rotateY(-6deg) translateY(-8px)
+    }
 }
 
 .book-cover{
@@ -201,10 +205,20 @@ body{
 }
 
 @keyframes dustFloat{
-    from{transform:translateY(110vh);opacity:0}
-    20%{opacity:.4}
-    80%{opacity:.25}
-    to{transform:translateY(-20vh);opacity:0}
+    from{
+        transform:translateY(110vh);
+        opacity:0
+    }
+    20%{
+        opacity:.4
+    }
+    80%{
+        opacity:.25
+    }
+    to{
+        transform:translateY(-20vh);
+        opacity:0
+    }
 }
 
 /* =========================================================
@@ -484,66 +498,131 @@ header h1{
 }
 
 /* =========================================================
-   RELOJ
+   PAGINA 5 — MENSAJES
 ========================================================= */
 
-.clock{
-    width:150px;
-    height:150px;
-    border:2px solid var(--gold);
-    border-radius:50%;
-    margin:40px auto;
-    position:relative;
-    background:rgba(255,255,255,.15);
+.messages-page{
+    text-align:center;
 }
 
-.clock:before,
-.clock:after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:50%;
-    transform-origin:bottom;
-    background:var(--wine);
-    border-radius:5px;
+.messages-intro{
+    max-width:650px;
+    margin:12px auto;
+    font-size:1.3rem;
+    line-height:1.7;
 }
 
-.clock:before{
-    width:3px;
-    height:48px;
-    transform:rotate(25deg);
+.chat-window{
+    width:min(650px,100%);
+    margin:40px auto 25px;
+    padding:25px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.32),
+            rgba(104,31,53,.035)
+        );
+
+    border:1px solid rgba(104,31,53,.18);
+    border-radius:14px;
+
+    box-shadow:
+        inset 0 0 30px rgba(104,31,53,.035),
+        0 15px 35px rgba(50,29,34,.08);
+
+    text-align:left;
 }
 
-.clock:after{
-    width:2px;
-    height:60px;
-    transform:rotate(145deg);
-}
-
-.time{
+.chat-time{
     text-align:center;
     font-family:Cinzel,serif;
-    color:var(--wine);
-    font-size:1.4rem;
+    font-size:.58rem;
     letter-spacing:3px;
+    color:#92785e;
+    margin:18px 0;
 }
 
-.call-lines{
-    text-align:center;
-    margin-top:35px;
+.message{
+    position:relative;
+    width:max-content;
+    max-width:82%;
+    padding:11px 15px;
+    margin:10px 0;
+    font-size:1.05rem;
+    line-height:1.45;
+    border-radius:14px;
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
 }
 
-.call-lines p{
-    font-size:1.3rem;
-    margin:12px 0;
+.message.received{
+    margin-right:auto;
+    background:#e6d6bd;
+    color:#3c2528;
+    border-bottom-left-radius:4px;
+}
+
+.message.sent{
+    margin-left:auto;
+    background:#72263d;
+    color:#fff3e3;
+    border-bottom-right-radius:4px;
+}
+
+.hidden-message{
     opacity:0;
-    transform:translateY(10px);
-    transition:.8s;
+    transform:
+        translateY(12px)
+        scale(.97);
+    pointer-events:none;
 }
 
-.call-lines p.show{
+.hidden-message.show-message{
     opacity:1;
-    transform:none;
+    transform:
+        translateY(0)
+        scale(1);
+    pointer-events:auto;
+}
+
+.messages-ending{
+    max-width:680px;
+    margin:40px auto 0;
+    font-size:1.3rem;
+    line-height:1.8;
+    opacity:0;
+    transform:translateY(15px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.messages-ending.show-message{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.beautiful-question{
+    margin:25px auto;
+    color:var(--wine);
+    font-family:Cinzel,serif;
+    font-size:1.35rem;
+}
+
+.final-message-line{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid rgba(104,31,53,.2);
+    color:var(--wine);
+    font-family:Cinzel,serif;
+    font-size:1rem;
+    letter-spacing:.5px;
+}
+
+.messages-button{
+    margin-top:35px;
 }
 
 /* =========================================================
@@ -652,7 +731,9 @@ header h1{
 }
 
 @keyframes blink{
-    50%{opacity:0}
+    50%{
+        opacity:0
+    }
 }
 
 /* =========================================================
@@ -804,6 +885,19 @@ header h1{
     .nav-button{
         padding:11px 15px;
         font-size:.7rem;
+    }
+
+    .chat-window{
+        padding:20px 13px;
+    }
+
+    .message{
+        max-width:88%;
+        font-size:1rem;
+    }
+
+    .messages-intro{
+        font-size:1.15rem;
     }
 
 }
@@ -1073,9 +1167,11 @@ header h1{
 </section>
 
 
-<!-- PAGINA 5 -->
+<!-- =====================================================
+     PAGINA 5 — REEMPLAZADA
+===================================================== -->
 
-<section class="paper memory-page">
+<section class="paper messages-page">
 
     <div class="page-number">05</div>
 
@@ -1084,43 +1180,157 @@ header h1{
     </div>
 
     <h2>
-        Las noches que no sabían terminar
+        Las noches que siempre tenían<br>
+        un mensaje más
     </h2>
 
-    <div class="clock"></div>
+    <div class="ornament">❦</div>
 
-    <div class="time" id="clockTime">
-        23:47
+    <p class="messages-intro">
+        Había noches en las que los dos sabíamos
+        que ya teníamos sueño...
+    </p>
+
+    <p class="messages-intro">
+        pero ninguno parecía tener demasiadas ganas
+        de despedirse.
+    </p>
+
+    <div class="chat-window">
+
+        <div class="chat-time">
+            00:18
+        </div>
+
+        <div class="message received hidden-message" id="msg1">
+            ¿Cómo vas con el sueño?
+        </div>
+
+        <div class="message sent hidden-message" id="msg2">
+            Ya me está dando un poquito...
+        </div>
+
+        <div class="message received hidden-message" id="msg3">
+            Entonces deberíamos dormir 🥹
+        </div>
+
+        <div class="message sent hidden-message" id="msg4">
+            Sí...
+        </div>
+
+        <div class="chat-time hidden-message" id="time2">
+            00:47
+        </div>
+
+        <div class="message sent hidden-message" id="msg5">
+            ¿Sigues despierta?
+        </div>
+
+        <div class="message received hidden-message" id="msg6">
+            Sí...
+        </div>
+
+        <div class="message received hidden-message" id="msg7">
+            ¿Tú?
+        </div>
+
+        <div class="message sent hidden-message" id="msg8">
+            Sí.
+        </div>
+
+        <div class="message received hidden-message" id="msg9">
+            Entonces sigamos hablando.
+        </div>
+
+        <div class="chat-time hidden-message" id="time3">
+            01:36
+        </div>
+
+        <div class="message sent hidden-message" id="msg10">
+            ¿Ya te dio más sueño?
+        </div>
+
+        <div class="message received hidden-message" id="msg11">
+            Muchísimo 😭
+        </div>
+
+        <div class="message sent hidden-message" id="msg12">
+            Entonces sí deberíamos dormir...
+        </div>
+
+        <div class="message received hidden-message" id="msg13">
+            Sí...
+        </div>
+
+        <div class="message sent hidden-message" id="msg14">
+            Bueno, después de este mensaje.
+        </div>
+
+        <div class="chat-time hidden-message" id="time4">
+            02:14
+        </div>
+
+        <div class="message received hidden-message" id="msg15">
+            ¿Y cuál es ese mensaje?
+        </div>
+
+        <div class="message sent hidden-message" id="msg16">
+            No sé...
+            quería seguir hablando contigo.
+        </div>
+
+        <div class="message received hidden-message" id="msg17">
+            Yo también.
+        </div>
+
     </div>
 
-    <div class="call-lines">
+    <div class="messages-ending hidden-message"
+         id="messageEnding">
 
-        <p id="line1">
-            “¿Todavía tienes sueño?”
+        <div class="ornament">
+            ❦
+        </div>
+
+        <p>
+            Nunca necesitábamos una razón demasiado grande
+            para seguir hablando.
         </p>
 
-        <p id="line2">
-            “Un poquito.”
+        <p>
+            A veces bastaba con una pregunta tan sencilla como:
         </p>
 
-        <p id="line3">
-            “Entonces cinco minutos más.”
+        <div class="beautiful-question">
+            «¿Cómo vas con el sueño?»
+        </div>
+
+        <p>
+            Y de alguna manera siempre aparecía
+            otro tema, otra pregunta,
+            otro mensaje...
         </p>
 
-        <p id="line4">
-            “Bueno...”
+        <p>
+            hasta que el sueño terminaba ganándonos
+            a los dos.
         </p>
 
-        <p id="line5">
-            “Mentira. Sigamos hablando.”
-        </p>
+        <div class="final-message-line">
+            Y aun cuando ya no podíamos más,
+            siempre parecía quedar algo más
+            que queríamos decirnos.
+        </div>
 
     </div>
 
-    <button class="reveal"
-            style="margin-top:30px"
-            onclick="startCall()">
-        RECORDAR ESA NOCHE
+    <button
+        class="reveal messages-button"
+        id="startMessagesButton"
+        onclick="startMessages()">
+
+        ABRIR UNA DE ESAS NOCHES
+
     </button>
 
 </section>
@@ -1427,7 +1637,8 @@ header h1{
             Por la primera carta.
             Por nuestras salidas.
             Por nuestras preguntas.
-            Por las llamadas que parecían no tener final.
+            Por aquellas noches de mensajes que parecían
+            no tener final.
         </p>
 
         <p>
@@ -1552,7 +1763,7 @@ header h1{
     <p>
         Más días.
         Más noches.
-        Más llamadas.
+        Más mensajes.
         Más salidas.
         Más besos.
         Más recuerdos.
@@ -1749,10 +1960,6 @@ function showPage(){
         behavior:"smooth"
     });
 
-    if(page===4){
-        setTimeout(startCall,500);
-    }
-
 }
 
 function changePage(direction){
@@ -1799,53 +2006,99 @@ function reveal(id){
 
 
 /* =========================================================
-   LLAMADA
+   NOCHES DE MENSAJES
 ========================================================= */
 
-let callStarted=false;
+let messagesStarted=false;
 
-function startCall(){
+function startMessages(){
 
-    if(callStarted) return;
+    if(messagesStarted) return;
 
-    callStarted=true;
+    messagesStarted=true;
 
-    const times=[
-        "23:47",
-        "00:31",
-        "01:18",
-        "02:04",
-        "02:37"
+    const sequence=[
+
+        {id:"msg1",delay:500},
+        {id:"msg2",delay:1100},
+        {id:"msg3",delay:1800},
+        {id:"msg4",delay:2500},
+
+        {id:"time2",delay:3300},
+
+        {id:"msg5",delay:3900},
+        {id:"msg6",delay:4600},
+        {id:"msg7",delay:5300},
+        {id:"msg8",delay:6000},
+        {id:"msg9",delay:6900},
+
+        {id:"time3",delay:7900},
+
+        {id:"msg10",delay:8500},
+        {id:"msg11",delay:9200},
+        {id:"msg12",delay:9900},
+        {id:"msg13",delay:10600},
+        {id:"msg14",delay:11400},
+
+        {id:"time4",delay:12300},
+
+        {id:"msg15",delay:13000},
+        {id:"msg16",delay:13800},
+        {id:"msg17",delay:14600}
+
     ];
 
-    const lines=[
-        "line1",
-        "line2",
-        "line3",
-        "line4",
-        "line5"
-    ];
 
-    let i=0;
+    sequence.forEach(item=>{
 
-    const clock=document.getElementById("clockTime");
+        setTimeout(()=>{
 
-    function nextLine(){
+            const element=
+                document.getElementById(item.id);
 
-        if(i>=lines.length) return;
+            if(element){
 
-        clock.textContent=times[i];
+                element.classList.add(
+                    "show-message"
+                );
 
-        document.getElementById(lines[i])
-            .classList.add("show");
+                element.scrollIntoView({
+                    behavior:"smooth",
+                    block:"nearest"
+                });
 
-        i++;
+            }
 
-        setTimeout(nextLine,850);
+        },item.delay);
 
-    }
+    });
 
-    nextLine();
+
+    setTimeout(()=>{
+
+        const ending=
+            document.getElementById(
+                "messageEnding"
+            );
+
+        ending.classList.add(
+            "show-message"
+        );
+
+    },15500);
+
+
+    const button=
+        document.getElementById(
+            "startMessagesButton"
+        );
+
+    setTimeout(()=>{
+
+        button.style.opacity="0";
+        button.style.pointerEvents="none";
+
+    },300);
 
 }
 
@@ -1977,4 +2230,4 @@ document.addEventListener("click",e=>{
 </script>
 
 </body>
-  </html>
+    </html>
