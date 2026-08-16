@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>✦ Diez páginas que todavía no quiero cerrar ✦</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --paper:#f5ead4;
+    --paper2:#ead8b9;
+    --ink:#321d22;
+    --wine:#681f35;
+    --wine2:#8c304b;
+    --gold:#b08a4a;
+    --shadow:rgba(18,10,12,.5);
+    --night:#11090d;
+    --cream:#fff8eb;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 15%,#3b1d27 0%,#170c11 40%,#090507 100%);
+    color:var(--cream);
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   INTRO — EL LIBRO CERRADO
+========================================================= */
+
+#opening{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at 50% 40%,#3b2028,#12090d 70%);
+    transition:opacity 1.2s,visibility 1.2s;
+}
+
+#opening.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.intro-wrap{
+    text-align:center;
+    width:min(90%,600px);
+}
+
+.intro-small{
+    font-family:Cinzel,serif;
+    font-size:.7rem;
+    letter-spacing:5px;
+    color:#d9b87b;
+    margin-bottom:35px;
+}
+
+.intro-title{
+    font-family:Cinzel,serif;
+    font-size:clamp(2rem,8vw,4.7rem);
+    line-height:1.08;
+    color:#f8e8cc;
+}
+
+.intro-sub{
+    margin-top:25px;
+    font-size:1.25rem;
+    color:#d6c0ae;
+}
+
+.book-mini{
+    width:180px;
+    height:245px;
+    margin:45px auto 30px;
+    position:relative;
+    transform-style:preserve-3d;
+    transform:perspective(800px) rotateY(-10deg);
+    animation:bookFloat 4s ease-in-out infinite;
+}
+
+@keyframes bookFloat{
+    0%,100%{transform:perspective(800px) rotateY(-10deg) translateY(0)}
+    50%{transform:perspective(800px) rotateY(-6deg) translateY(-8px)}
+}
+
+.book-cover{
+    position:absolute;
+    inset:0;
+    border-radius:5px 12px 12px 5px;
+    background:
+        linear-gradient(135deg,#7b293f,#451525);
+    border:2px solid #b58c51;
+    box-shadow:
+        15px 25px 40px rgba(0,0,0,.6),
+        inset 0 0 0 7px rgba(176,138,74,.08);
+}
+
+.book-cover:before{
+    content:"";
+    position:absolute;
+    inset:13px;
+    border:1px solid rgba(222,188,119,.55);
+}
+
+.cover-mark{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-family:Cinzel,serif;
+    color:#ead29d;
+    text-align:center;
+    padding:25px;
+}
+
+.cover-mark span{
+    font-size:.55rem;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.cover-mark strong{
+    font-size:1rem;
+    line-height:1.6;
+}
+
+.open-button{
+    border:1px solid #c49d5c;
+    background:transparent;
+    color:#ead29d;
+    padding:14px 28px;
+    border-radius:100px;
+    font-family:Cinzel,serif;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.open-button:hover{
+    background:rgba(196,157,92,.12);
+    box-shadow:0 0 35px rgba(196,157,92,.18);
+}
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+#candleGlow{
+    position:fixed;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:0;
+    background:radial-gradient(circle,rgba(255,182,91,.13),transparent 70%);
+    transform:translate(-50%,-50%);
+    transition:left .15s,top .15s;
+}
+
+#dust{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.dust{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:#e5c98e;
+    opacity:.3;
+    animation:dustFloat linear infinite;
+}
+
+@keyframes dustFloat{
+    from{transform:translateY(110vh);opacity:0}
+    20%{opacity:.4}
+    80%{opacity:.25}
+    to{transform:translateY(-20vh);opacity:0}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+    z-index:2;
+}
+
+.header-content{
+    width:min(900px,100%);
+}
+
+.chapter{
+    font-family:Cinzel,serif;
+    letter-spacing:5px;
+    font-size:.65rem;
+    color:#c7a76c;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-family:Cinzel,serif;
+    font-size:clamp(2.3rem,8vw,5.7rem);
+    line-height:1.08;
+    color:#f7e8ce;
+}
+
+.header-line{
+    width:90px;
+    height:1px;
+    background:#b08a4a;
+    margin:30px auto;
+}
+
+.header-name{
+    font-family:Cinzel,serif;
+    letter-spacing:3px;
+    color:#d6b87d;
+    font-size:.85rem;
+}
+
+.header-date{
+    margin-top:12px;
+    color:#bca99c;
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   LIBRO
+========================================================= */
+
+#book{
+    width:min(1080px,94vw);
+    margin:0 auto 100px;
+    position:relative;
+    z-index:2;
+}
+
+.paper{
+    display:none;
+    position:relative;
+    min-height:760px;
+    padding:clamp(35px,7vw,80px);
+    color:var(--ink);
+
+    background:
+        radial-gradient(circle at 20% 10%,rgba(255,255,255,.5),transparent 30%),
+        radial-gradient(circle at 80% 90%,rgba(119,72,32,.08),transparent 30%),
+        var(--paper);
+
+    box-shadow:
+        0 35px 90px var(--shadow),
+        inset 0 0 80px rgba(94,55,25,.07);
+
+    border-radius:4px;
+    overflow:hidden;
+}
+
+.paper.active{
+    display:block;
+    animation:pageIn .9s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateX(30px) rotateY(-4deg);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.paper:before{
+    content:"";
+    position:absolute;
+    inset:22px;
+    border:1px solid rgba(104,31,53,.18);
+    pointer-events:none;
+}
+
+.paper:after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:35px;
+    height:100%;
+    background:linear-gradient(90deg,rgba(0,0,0,.12),transparent);
+    opacity:.4;
+}
+
+.page-number{
+    position:absolute;
+    bottom:27px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:Cinzel,serif;
+    font-size:.65rem;
+    letter-spacing:3px;
+    color:#876b50;
+}
+
+.page-title{
+    text-align:center;
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    font-size:clamp(1.4rem,4vw,2.5rem);
+    margin-bottom:45px;
+}
+
+.ornament{
+    text-align:center;
+    color:var(--gold);
+    font-size:1.5rem;
+    margin:20px 0;
+}
+
+/* =========================================================
+   PAGINA 1
+========================================================= */
+
+.first-page{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.first-page h2{
+    font-family:Cinzel,serif;
+    font-size:clamp(2rem,6vw,4rem);
+    color:var(--wine);
+}
+
+.first-page p{
+    max-width:650px;
+    font-size:1.45rem;
+    line-height:1.8;
+    margin-top:30px;
+}
+
+.ink-reveal{
+    opacity:0;
+    animation:ink .9s forwards;
+}
+
+@keyframes ink{
+    from{
+        opacity:0;
+        filter:blur(5px);
+    }
+    to{
+        opacity:1;
+        filter:blur(0);
+    }
+}
+
+/* =========================================================
+   RECUERDO
+========================================================= */
+
+.memory-page{
+    text-align:center;
+}
+
+.memory-number{
+    font-family:Cinzel,serif;
+    font-size:.7rem;
+    letter-spacing:5px;
+    color:var(--gold);
+}
+
+.memory-page h2{
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    font-size:clamp(1.8rem,6vw,3.2rem);
+    margin:20px 0;
+}
+
+.memory-page p{
+    max-width:720px;
+    margin:25px auto;
+    font-size:1.38rem;
+    line-height:1.85;
+}
+
+.memory-quote{
+    max-width:680px;
+    margin:50px auto;
+    padding:25px;
+    border-top:1px solid rgba(104,31,53,.25);
+    border-bottom:1px solid rgba(104,31,53,.25);
+    color:var(--wine);
+    font-size:1.5rem;
+    font-style:italic;
+}
+
+.reveal{
+    border:1px solid rgba(104,31,53,.35);
+    background:transparent;
+    color:var(--wine);
+    padding:12px 22px;
+    border-radius:100px;
+    font-family:Cinzel,serif;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.reveal:hover{
+    background:rgba(104,31,53,.07);
+}
+
+.secret-text{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:1s;
+}
+
+.secret-text.show{
+    max-height:300px;
+    opacity:1;
+    margin-top:25px;
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.letter-paper{
+    max-width:700px;
+    margin:0 auto;
+    font-size:1.35rem;
+    line-height:1.9;
+}
+
+.letter-paper p{
+    margin-bottom:24px;
+}
+
+.letter-sign{
+    margin-top:45px;
+    color:var(--wine);
+    font-family:Cinzel,serif;
+}
+
+/* =========================================================
+   RELOJ
+========================================================= */
+
+.clock{
+    width:150px;
+    height:150px;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    margin:40px auto;
+    position:relative;
+    background:rgba(255,255,255,.15);
+}
+
+.clock:before,
+.clock:after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:50%;
+    transform-origin:bottom;
+    background:var(--wine);
+    border-radius:5px;
+}
+
+.clock:before{
+    width:3px;
+    height:48px;
+    transform:rotate(25deg);
+}
+
+.clock:after{
+    width:2px;
+    height:60px;
+    transform:rotate(145deg);
+}
+
+.time{
+    text-align:center;
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    font-size:1.4rem;
+    letter-spacing:3px;
+}
+
+.call-lines{
+    text-align:center;
+    margin-top:35px;
+}
+
+.call-lines p{
+    font-size:1.3rem;
+    margin:12px 0;
+    opacity:0;
+    transform:translateY(10px);
+    transition:.8s;
+}
+
+.call-lines p.show{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   PREGUNTAS
+========================================================= */
+
+.question{
+    max-width:700px;
+    margin:20px auto;
+    border:1px solid rgba(104,31,53,.25);
+    padding:22px;
+    text-align:center;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.question:hover{
+    background:rgba(104,31,53,.05);
+}
+
+.question strong{
+    font-family:Cinzel,serif;
+    color:var(--wine);
+}
+
+.answer{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:.8s;
+    font-size:1.25rem;
+}
+
+.question.open .answer{
+    max-height:200px;
+    opacity:1;
+    margin-top:15px;
+}
+
+/* =========================================================
+   FUTURO
+========================================================= */
+
+.future-page{
+    text-align:center;
+}
+
+.future-card{
+    max-width:720px;
+    margin:18px auto;
+    padding:25px;
+    border:1px solid rgba(104,31,53,.2);
+    background:rgba(255,255,255,.18);
+}
+
+.future-card h3{
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    margin-bottom:10px;
+}
+
+.future-card p{
+    font-size:1.25rem;
+    line-height:1.6;
+}
+
+/* =========================================================
+   PAGINA XI
+========================================================= */
+
+.xi{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.xi-number{
+    font-family:Cinzel,serif;
+    font-size:clamp(6rem,20vw,13rem);
+    color:rgba(104,31,53,.08);
+    line-height:.8;
+}
+
+.xi h2{
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    font-size:clamp(1.8rem,6vw,3.2rem);
+    margin:35px 0;
+}
+
+.xi p{
+    max-width:700px;
+    font-size:1.4rem;
+    line-height:1.8;
+}
+
+.cursor{
+    display:inline-block;
+    width:2px;
+    height:1.2em;
+    background:var(--wine);
+    vertical-align:middle;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-page{
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 50%,#f8edda,#ead8b9);
+}
+
+.final-page h2{
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    font-size:clamp(2rem,7vw,4rem);
+}
+
+.final-page p{
+    max-width:720px;
+    margin:25px auto;
+    font-size:1.4rem;
+    line-height:1.8;
+}
+
+.final-name{
+    margin-top:50px;
+    font-family:Cinzel,serif;
+    color:var(--wine);
+    letter-spacing:3px;
+}
+
+.infinity{
+    font-size:3rem;
+    color:var(--gold);
+    margin:20px;
+}
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.navigation{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:25px;
+    position:relative;
+    z-index:5;
+}
+
+.nav-button{
+    border:1px solid rgba(196,157,92,.5);
+    background:rgba(20,8,12,.65);
+    color:#e4c98f;
+    padding:13px 22px;
+    border-radius:100px;
+    font-family:Cinzel,serif;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-button:hover{
+    background:rgba(196,157,92,.1);
+}
+
+.nav-button:disabled{
+    opacity:.25;
+    cursor:not-allowed;
+}
+
+.counter{
+    color:#cbb79d;
+    font-family:Cinzel,serif;
+    font-size:.65rem;
+    letter-spacing:3px;
+}
+
+/* =========================================================
+   CIERRE
+========================================================= */
+
+#goodbye{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.goodbye-inner{
+    max-width:800px;
+}
+
+.goodbye-inner h2{
+    font-family:Cinzel,serif;
+    font-size:clamp(2rem,7vw,4.5rem);
+}
+
+.goodbye-inner p{
+    font-size:1.4rem;
+    line-height:1.8;
+    color:#d7c5bb;
+    margin-top:30px;
+}
+
+.final-wish{
+    margin-top:50px;
+    color:#d6b87d!important;
+    font-family:Cinzel,serif;
+    font-size:1rem!important;
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:650px){
+
+    .paper{
+        min-height:680px;
+        padding:55px 28px;
+    }
+
+    .paper:before{
+        inset:12px;
+    }
+
+    .paper p{
+        font-size:1.18rem;
+    }
+
+    .memory-page p,
+    .first-page p,
+    .future-card p,
+    .letter-paper,
+    .xi p,
+    .final-page p{
+        font-size:1.18rem;
+    }
+
+    .navigation{
+        gap:8px;
+    }
+
+    .nav-button{
+        padding:11px 15px;
+        font-size:.7rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="candleGlow"></div>
+<div id="dust"></div>
+
+<!-- =====================================================
+     APERTURA
+===================================================== -->
+
+<div id="opening">
+
+    <div class="intro-wrap">
+
+        <div class="intro-small">
+            17 · AGOSTO · 2026
+        </div>
+
+        <div class="book-mini">
+
+            <div class="book-cover">
+
+                <div class="cover-mark">
+
+                    <span>PARA</span>
+
+                    <strong>
+                        VALERIA<br>
+                        PETRO<br>
+                        VILLAZÓN
+                    </strong>
+
+                    <span style="margin-top:18px">
+                        X MESES
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="intro-title">
+            Diez páginas<br>
+            que todavía no quiero cerrar
+        </div>
+
+        <div class="intro-sub">
+            Hay historias que se cuentan.<br>
+            La nuestra se escribe.
+        </div>
+
+        <br>
+
+        <button class="open-button" onclick="openBook()">
+            ABRIR NUESTRO LIBRO
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CABECERA
+===================================================== -->
+
+<header>
+
+    <div class="header-content">
+
+        <div class="chapter">
+            CAPÍTULO X
+        </div>
+
+        <h1>
+            Diez páginas<br>
+            que todavía no quiero cerrar
+        </h1>
+
+        <div class="header-line"></div>
+
+        <div class="header-name">
+            VALERIA PETRO VILLAZÓN
+        </div>
+
+        <div class="header-date">
+            17 · 08 · 2026
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     LIBRO
+===================================================== -->
+
+<main id="book">
+
+
+<!-- PAGINA 1 -->
+
+<section class="paper active first-page">
+
+    <div class="page-number">01</div>
+
+    <div class="chapter">
+        PRIMERA PÁGINA
+    </div>
+
+    <h2>
+        Antes de nosotros,<br>
+        esta página estaba en blanco.
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        Y entonces apareciste tú.
+    </p>
+
+    <p class="ink-reveal">
+        Y sin que ninguno de los dos pudiera imaginar
+        todo lo que vendría después,
+        comenzamos a escribir algo que hoy cumple
+        <strong>10 meses.</strong>
+    </p>
+
+</section>
+
+
+<!-- PAGINA 2 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">02</div>
+
+    <div class="memory-number">
+        RECUERDO I
+    </div>
+
+    <h2>
+        El primer beso
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        Todavía puedo imaginar ese pequeño momento
+        en el que los nervios hicieron que todo pareciera
+        un poquito más lento.
+    </p>
+
+    <p>
+        Estábamos nerviosos.
+        Quizá demasiado.
+    </p>
+
+    <div class="memory-quote">
+        “Y aun así, nos acercamos.”
+    </div>
+
+    <button class="reveal"
+            onclick="reveal('secret1')">
+        LEER LO QUE NUNCA TE DIJE
+    </button>
+
+    <div id="secret1" class="secret-text">
+        <p>
+            Si pudiera regresar exactamente a ese instante,
+            sabiendo que diez meses después seguiría aquí
+            celebrándote, volvería a acercarme.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- PAGINA 3 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">03</div>
+
+    <div class="memory-number">
+        RECUERDO II
+    </div>
+
+    <h2>
+        La primera carta
+    </h2>
+
+    <div class="ornament">✒</div>
+
+    <p>
+        Antes de saber cuánto significaría escribirte,
+        hice aquella primera carta.
+    </p>
+
+    <p>
+        Y luego vi tu reacción.
+    </p>
+
+    <div class="memory-quote">
+        Ahí entendí que mis palabras también podían
+        llegar hasta donde mis manos no podían.
+    </div>
+
+    <p>
+        Desde entonces, cada carta ha sido una manera
+        diferente de decirte:
+    </p>
+
+    <p style="color:var(--wine);font-family:Cinzel,serif;">
+        “Estoy pensando en ti.”
+    </p>
+
+</section>
+
+
+<!-- PAGINA 4 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">04</div>
+
+    <div class="memory-number">
+        RECUERDO III
+    </div>
+
+    <h2>
+        Cuando solamente éramos tú y yo
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        Nuestra primera salida tranquila.
+    </p>
+
+    <p>
+        No necesitábamos que ocurriera algo enorme.
+        Bastaba con tener tiempo para mirarnos,
+        hablar y simplemente estar juntos.
+    </p>
+
+    <div class="memory-quote">
+        Algunas de mis mejores memorias contigo
+        comenzaron exactamente así:
+        sin necesidad de hacer demasiado.
+    </div>
+
+    <p>
+        Y después llegaron más salidas.
+        Más planes.
+        Más momentos que ahora forman parte de nosotros.
+    </p>
+
+</section>
+
+
+<!-- PAGINA 5 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">05</div>
+
+    <div class="memory-number">
+        RECUERDO IV
+    </div>
+
+    <h2>
+        Las noches que no sabían terminar
+    </h2>
+
+    <div class="clock"></div>
+
+    <div class="time" id="clockTime">
+        23:47
+    </div>
+
+    <div class="call-lines">
+
+        <p id="line1">
+            “¿Todavía tienes sueño?”
+        </p>
+
+        <p id="line2">
+            “Un poquito.”
+        </p>
+
+        <p id="line3">
+            “Entonces cinco minutos más.”
+        </p>
+
+        <p id="line4">
+            “Bueno...”
+        </p>
+
+        <p id="line5">
+            “Mentira. Sigamos hablando.”
+        </p>
+
+    </div>
+
+    <button class="reveal"
+            style="margin-top:30px"
+            onclick="startCall()">
+        RECORDAR ESA NOCHE
+    </button>
+
+</section>
+
+
+<!-- PAGINA 6 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">06</div>
+
+    <div class="memory-number">
+        RECUERDO V
+    </div>
+
+    <h2>
+        Preguntarte hasta conocerte
+    </h2>
+
+    <div class="ornament">?</div>
+
+    <p>
+        Tocá cada pregunta.
+    </p>
+
+    <div class="question">
+
+        <strong>
+            ¿Qué amo de tus ojos?
+        </strong>
+
+        <div class="answer">
+            Que a veces puedo mirarlos y olvidarme
+            completamente de lo que estaba diciendo.
+        </div>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            ¿Qué amo de tus besos?
+        </strong>
+
+        <div class="answer">
+            Que todavía consiguen hacer que un momento
+            normal se sienta diferente.
+        </div>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            ¿Qué amo de tu forma de ser?
+        </strong>
+
+        <div class="answer">
+            Que eres tú.
+            Y que no quiero cambiar eso por ninguna otra persona.
+        </div>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            ¿Y qué más amo?
+        </strong>
+
+        <div class="answer">
+            Todo lo que hace que seas mi Mon Étoile d'Ambre.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PAGINA 7 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">07</div>
+
+    <div class="memory-number">
+        RECUERDO VI
+    </div>
+
+    <h2>
+        No todas las páginas fueron fáciles
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        También tuvimos discusiones.
+    </p>
+
+    <p>
+        También estuvieron mis celos,
+        mis errores y momentos en los que
+        tuvimos que aprender a entendernos.
+    </p>
+
+    <div class="memory-quote">
+        No quiero borrar esas páginas.
+    </div>
+
+    <p>
+        Porque también forman parte de nosotros.
+    </p>
+
+    <p>
+        Me recuerdan que amar no significa
+        nunca equivocarse.
+    </p>
+
+    <p style="color:var(--wine);font-family:Cinzel,serif;">
+        Significa querer hacerlo mejor.
+    </p>
+
+</section>
+
+
+<!-- PAGINA 8 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">08</div>
+
+    <div class="memory-number">
+        RECUERDO VII
+    </div>
+
+    <h2>
+        Algunos lugares cambiaron para siempre
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        Hay lugares que antes eran solamente lugares.
+    </p>
+
+    <p>
+        Ahora algunos tienen un recuerdo nuestro escondido dentro.
+    </p>
+
+    <div class="question">
+
+        <strong>
+            EL SALÓN
+        </strong>
+
+        <div class="answer">
+            Un lugar donde los besos hicieron que
+            el tiempo tuviera que aprender a esperar.
+        </div>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            AQUEL BAÑO
+        </strong>
+
+        <div class="answer">
+            Una pequeña historia que probablemente
+            ninguno de los dos esperaba guardar.
+        </div>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            TODOS LOS CINES
+        </strong>
+
+        <div class="answer">
+            No puedo elegir uno.
+            Todos son mis favoritos porque tú estabas conmigo.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PAGINA 9 -->
+
+<section class="paper future-page">
+
+    <div class="page-number">09</div>
+
+    <div class="memory-number">
+        LAS PÁGINAS QUE TODAVÍA NO EXISTEN
+    </div>
+
+    <h2 class="page-title">
+        Todavía no puedo escribirlas.
+    </h2>
+
+    <div class="future-card">
+
+        <h3>
+            UN HOGAR
+        </h3>
+
+        <p>
+            Quiero saber cómo se siente compartir contigo
+            un lugar que podamos llamar nuestro.
+        </p>
+
+    </div>
+
+    <div class="future-card">
+
+        <h3>
+            SIN SECRETOS
+        </h3>
+
+        <p>
+            Quiero que llegue el día en que podamos
+            vivir nuestra relación sin escondernos.
+        </p>
+
+    </div>
+
+    <div class="future-card">
+
+        <h3>
+            TUS LUGARES FAVORITOS
+        </h3>
+
+        <p>
+            Quiero viajar contigo y conocer los lugares
+            que significan algo para ti.
+        </p>
+
+    </div>
+
+    <div class="future-card">
+
+        <h3>
+            TUS SUEÑOS
+        </h3>
+
+        <p>
+            Quiero estar ahí mientras consigues cada sueño
+            que alguna vez te propongas.
+        </p>
+
+    </div>
+
+    <div class="ornament">
+        ❦
+    </div>
+
+    <p style="font-size:1.3rem;color:var(--wine);">
+        Estas páginas no están vacías.<br>
+        Simplemente todavía tenemos que vivirlas.
+    </p>
+
+</section>
+
+
+<!-- PAGINA 10 -->
+
+<section class="paper memory-page">
+
+    <div class="page-number">10</div>
+
+    <div class="memory-number">
+        DÉCIMA PÁGINA
+    </div>
+
+    <h2>
+        Diez meses después...
+    </h2>
+
+    <div class="ornament">♥</div>
+
+    <div class="letter-paper">
+
+        <p>
+            <strong>Mi querida Valeria:</strong>
+        </p>
+
+        <p>
+            Hoy no quiero escribirte simplemente
+            “feliz décimo mes”.
+        </p>
+
+        <p>
+            Quiero agradecerte por cada pequeña parte
+            de estos diez meses.
+        </p>
+
+        <p>
+            Por aquel primer beso nervioso.
+            Por la primera carta.
+            Por nuestras salidas.
+            Por nuestras preguntas.
+            Por las llamadas que parecían no tener final.
+        </p>
+
+        <p>
+            Por los besos que hicieron que algunos lugares
+            dejaran de ser simplemente lugares.
+        </p>
+
+        <p>
+            Por los cines que no puedo escoger.
+            Por las discusiones que nos enseñaron.
+            Por las veces que volvimos a encontrarnos.
+        </p>
+
+        <p>
+            Y sobre todo, por seguir siendo tú.
+        </p>
+
+        <p>
+            Después de diez meses todavía amo tus ojos.
+            Todavía amo tus besos.
+            Todavía amo tu forma de ser.
+        </p>
+
+        <p>
+            Y todavía existe en mí esa sensación
+            de querer seguir descubriendo quién eres,
+            incluso después de todo lo que ya conozco de ti.
+        </p>
+
+        <p>
+            Si me preguntaras si volvería a elegirte,
+            la respuesta sería sencilla.
+        </p>
+
+        <p style="font-family:Cinzel,serif;color:var(--wine);">
+            Sí.
+        </p>
+
+        <p>
+            Volvería a elegirte en aquel primer día.
+            Volvería a elegir aquel primer beso.
+            Volvería a elegir cada página que nos trajo hasta aquí.
+        </p>
+
+        <p>
+            Y si pudiera pedir algo para las páginas que vienen,
+            no pediría que fueran perfectas.
+        </p>
+
+        <p>
+            Pediría que siguieran teniendo tu nombre.
+        </p>
+
+        <p class="letter-sign">
+            Feliz décimo mes,
+            <br>
+            mi Mon Étoile d'Ambre.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PAGINA XI -->
+
+<section class="paper xi">
+
+    <div class="page-number">XI</div>
+
+    <div class="xi-number">
+        XI
+    </div>
+
+    <h2>
+        Esta página todavía está vacía.
+    </h2>
+
+    <p id="typingText">
+    </p>
+
+    <button class="reveal"
+            id="typeButton"
+            style="margin-top:40px"
+            onclick="typeFuture()">
+        ESCRIBIR LA PRÓXIMA PÁGINA
+    </button>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="paper final-page">
+
+    <div class="page-number">∞</div>
+
+    <div class="chapter">
+        DESPUÉS DE TODO
+    </div>
+
+    <h2>
+        No quiero cerrar este libro.
+    </h2>
+
+    <div class="ornament">❦</div>
+
+    <p>
+        Porque diez meses son demasiado importantes
+        para ser solamente un número...
+    </p>
+
+    <p>
+        pero son demasiado pocos
+        para ser el final de nuestra historia.
+    </p>
+
+    <p>
+        Quiero más páginas.
+    </p>
+
+    <p>
+        Más días.
+        Más noches.
+        Más llamadas.
+        Más salidas.
+        Más besos.
+        Más recuerdos.
+    </p>
+
+    <p>
+        Más tú.
+    </p>
+
+    <div class="final-name">
+        VALERIA PETRO VILLAZÓN
+    </div>
+
+    <div class="infinity">
+        ∞
+    </div>
+
+    <p style="font-family:Cinzel,serif;color:var(--wine);">
+        10 meses escritos.<br>
+        Una vida todavía por escribir.
+    </p>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
+
+<div class="navigation">
+
+    <button class="nav-button"
+            id="prev"
+            onclick="changePage(-1)"
+            disabled>
+        ← ANTERIOR
+    </button>
+
+    <div class="counter">
+        <span id="current">01</span>
+        /
+        <span id="total">12</span>
+    </div>
+
+    <button class="nav-button"
+            id="next"
+            onclick="changePage(1)">
+        SIGUIENTE →
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     CIERRE
+===================================================== -->
+
+<section id="goodbye">
+
+    <div class="goodbye-inner">
+
+        <div class="chapter">
+            PARA TI
+        </div>
+
+        <h2>
+            Gracias por estos diez meses.
+        </h2>
+
+        <p>
+            Y si algún día vuelves a abrir este libro,
+            quiero que recuerdes exactamente lo que quería
+            decirte cuando lo hice:
+        </p>
+
+        <p style="color:#d6b87d;">
+            “Todavía quiero escribir contigo.”
+        </p>
+
+        <p class="final-wish">
+            FIN DE ESTA PÁGINA.<br>
+            NUNCA DE NOSOTROS.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   APERTURA
+========================================================= */
+
+function openBook(){
+
+    document.getElementById("opening")
+        .classList.add("hidden");
+
+    setTimeout(()=>{
+
+        window.scrollTo({
+            top:window.innerHeight,
+            behavior:"smooth"
+        });
+
+    },900);
+
+}
+
+
+/* =========================================================
+   POLVO
+========================================================= */
+
+const dust=document.getElementById("dust");
+
+for(let i=0;i<35;i++){
+
+    const d=document.createElement("div");
+
+    d.className="dust";
+
+    d.style.left=Math.random()*100+"%";
+    d.style.animationDuration=(8+Math.random()*15)+"s";
+    d.style.animationDelay=Math.random()*10+"s";
+
+    dust.appendChild(d);
+}
+
+
+/* =========================================================
+   LUZ DE VELA
+========================================================= */
+
+document.addEventListener("mousemove",e=>{
+
+    const glow=document.getElementById("candleGlow");
+
+    glow.style.left=e.clientX+"px";
+    glow.style.top=e.clientY+"px";
+
+});
+
+document.addEventListener("touchmove",e=>{
+
+    if(e.touches.length){
+
+        const glow=document.getElementById("candleGlow");
+
+        glow.style.left=e.touches[0].clientX+"px";
+        glow.style.top=e.touches[0].clientY+"px";
+
+    }
+
+},{passive:true});
+
+
+/* =========================================================
+   PAGINACIÓN
+========================================================= */
+
+const pages=[
+    ...document.querySelectorAll(".paper")
+];
+
+let page=0;
+
+document.getElementById("total").textContent=
+    String(pages.length).padStart(2,"0");
+
+function showPage(){
+
+    pages.forEach((p,i)=>{
+
+        p.classList.toggle("active",i===page);
+
+    });
+
+    document.getElementById("current").textContent=
+        String(page+1).padStart(2,"0");
+
+    document.getElementById("prev").disabled=page===0;
+
+    document.getElementById("next").disabled=
+        page===pages.length-1;
+
+    window.scrollTo({
+        top:document.getElementById("book").offsetTop-30,
+        behavior:"smooth"
+    });
+
+    if(page===4){
+        setTimeout(startCall,500);
+    }
+
+}
+
+function changePage(direction){
+
+    const next=page+direction;
+
+    if(next<0 || next>=pages.length) return;
+
+    page=next;
+
+    showPage();
+
+}
+
+
+/* =========================================================
+   TECLADO
+========================================================= */
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="ArrowRight"){
+        changePage(1);
+    }
+
+    if(e.key==="ArrowLeft"){
+        changePage(-1);
+    }
+
+});
+
+
+/* =========================================================
+   RECUERDOS SECRETOS
+========================================================= */
+
+function reveal(id){
+
+    const element=document.getElementById(id);
+
+    element.classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   LLAMADA
+========================================================= */
+
+let callStarted=false;
+
+function startCall(){
+
+    if(callStarted) return;
+
+    callStarted=true;
+
+    const times=[
+        "23:47",
+        "00:31",
+        "01:18",
+        "02:04",
+        "02:37"
+    ];
+
+    const lines=[
+        "line1",
+        "line2",
+        "line3",
+        "line4",
+        "line5"
+    ];
+
+    let i=0;
+
+    const clock=document.getElementById("clockTime");
+
+    function nextLine(){
+
+        if(i>=lines.length) return;
+
+        clock.textContent=times[i];
+
+        document.getElementById(lines[i])
+            .classList.add("show");
+
+        i++;
+
+        setTimeout(nextLine,850);
+
+    }
+
+    nextLine();
+
+}
+
+
+/* =========================================================
+   PREGUNTAS
+========================================================= */
+
+document.querySelectorAll(".question")
+.forEach(q=>{
+
+    q.addEventListener("click",()=>{
+
+        q.classList.toggle("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   PÁGINA XI
+========================================================= */
+
+let typed=false;
+
+function typeFuture(){
+
+    if(typed) return;
+
+    typed=true;
+
+    const text=
+    "No quiero escribirla solo. Quiero que sea una página que construyamos juntos, con todo lo que todavía nos falta vivir.";
+
+    const target=
+        document.getElementById("typingText");
+
+    const button=
+        document.getElementById("typeButton");
+
+    button.style.display="none";
+
+    let i=0;
+
+    function type(){
+
+        if(i<text.length){
+
+            target.innerHTML=
+                text.substring(0,i+1)
+                +'<span class="cursor"></span>';
+
+            i++;
+
+            setTimeout(type,35);
+
+        }else{
+
+            target.innerHTML=text;
+
+        }
+
+    }
+
+    type();
+
+}
+
+
+/* =========================================================
+   DOBLE TOQUE — PEQUEÑO DETALLE
+========================================================= */
+
+let lastTap=0;
+
+document.addEventListener("click",e=>{
+
+    const now=Date.now();
+
+    if(now-lastTap<350){
+
+        const heart=document.createElement("div");
+
+        heart.innerHTML="♥";
+
+        heart.style.position="fixed";
+        heart.style.left=e.clientX+"px";
+        heart.style.top=e.clientY+"px";
+        heart.style.color="#8c304b";
+        heart.style.fontSize="24px";
+        heart.style.pointerEvents="none";
+        heart.style.zIndex="9999";
+
+        document.body.appendChild(heart);
+
+        heart.animate(
+
+            [
+                {
+                    transform:"translate(-50%,-50%) scale(.5)",
+                    opacity:0
+                },
+                {
+                    transform:"translate(-50%,-100px) scale(1.3)",
+                    opacity:1
+                },
+                {
+                    transform:"translate(-50%,-170px) scale(.6)",
+                    opacity:0
+                }
+            ],
+
+            {
+                duration:1200,
+                easing:"ease-out"
+            }
+
+        ).onfinish=()=>{
+            heart.remove();
+        };
+
+    }
+
+    lastTap=now;
+
+});
+
+</script>
+
+</body>
+  </html>
